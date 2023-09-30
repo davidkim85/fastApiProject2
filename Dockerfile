@@ -9,6 +9,6 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-RUN chmod a+x docker/*.sh
+RUN chmod 755 docker/*.sh
 CMD ["sh", "-c","./wait-for-it.sh db:5432"]
 
