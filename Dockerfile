@@ -9,4 +9,4 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-CMD ["sh", "-c","./app.sh"]
+CMD ["sh", "-c","./wait-for-it.sh db:5432"]
