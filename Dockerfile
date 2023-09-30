@@ -9,8 +9,6 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-RUN chmod 755 docker/*.sh
-CMD ["sh", "-c","./wait-for-it.sh db:5432"]
 CMD alembic upgrade head
 WORKDIR api
 CMD gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind=0.0.0.0:8000
