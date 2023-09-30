@@ -9,6 +9,6 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-RUN chmod +x /fastapi_app/docker/app.sh
+RUN chmod 700 /fastapi_app/docker/app.sh
 CMD ["sh", "-c","./wait-for-it.sh db:5432"]
 
