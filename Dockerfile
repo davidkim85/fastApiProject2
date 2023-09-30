@@ -9,4 +9,5 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-RUN ["chmod", "+x", "/app.sh"]
+RUN chmod +x docker/*.sh
+RUN alembic upgrade head
