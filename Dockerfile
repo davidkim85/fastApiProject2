@@ -9,4 +9,4 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-RUN chmod 700 /fastapi_app/docker/app.sh
+RUN chmod 700 docker/*.sh
