@@ -17,7 +17,7 @@ services:
     env_file:
       - .env
     container_name: fastapi_app
-    command: ["/fastapi_app/docker/app.sh"]
+    command: ["chmod 700","/docker/app.sh"]
     restart: always
     ports:
       - "8000:8000"
